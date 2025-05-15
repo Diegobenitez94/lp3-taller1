@@ -1,6 +1,9 @@
 # API de Videos
 
 Esta es una API RESTful para gestión de videos, desarrollada con Flask, Flask-RESTful y SQLAlchemy.
+Datos estudiante : Diego fernando benitez camacho
+correo : diego.benitez.9045@miremington.edu.co
+
 
 ## Descripción
 
