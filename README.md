@@ -2,10 +2,10 @@
 
 Esta es una API RESTful para gestión de videos, desarrollada con Flask, Flask-RESTful y SQLAlchemy.
 # datos estudiante
-Nombre: Diego fernando benitez camacho
-correo : diego.benitez.9045@miremington.edu.co
-carrera : ingenieria sistemas
-semestre : 6
+- Nombre: Diego fernando benitez camacho
+- correo : diego.benitez.9045@miremington.edu.co
+- carrera : ingenieria sistemas
+- semestre : 6
 
 
 ## Descripción
