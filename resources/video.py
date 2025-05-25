@@ -77,7 +77,7 @@ class Video(Resource):
         """
         args = video_put_args.parse_args()
         #verifica si el video ya existe
-        existing_video = videoModel.query.get(video_id)
+        existing_video = VideoModel.query.get(video_id)
         if existing_video:
             abort(409, message=f"El video ya existe con el ID {video_id}")
         video = VideoModel(id=video_id, name=args["name"],views=args["views"], likes=args["likes"])  
