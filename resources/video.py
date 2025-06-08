@@ -1,9 +1,11 @@
 """
 Recursos y rutas para la API de videos
 """
-from flask_restful import Resource, reqparse, abort, fields, marshal_with
+from flask_restful import Resource, reqparse, abort, fields, marshal_with, Api
 from models.video import VideoModel
 from models import db
+
+
 
 # Campos para serializar respuestas
 resource_fields = {
@@ -131,4 +133,4 @@ class Video(Resource):
     
         # TODO
         
-
+        

@@ -4,6 +4,8 @@ Archivo principal de la aplicación Flask
 import os
 from flask import Flask
 from flask_restful import Api
+from flask_migrate import Migrate
+
 from models import db
 from resources.video import Video
 from config import config
@@ -25,9 +27,14 @@ def create_app(config_name='default'):
     
     # Cargar configuración
     app.config.from_object(config[config_name])
+    app.config ['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
     
     # Inicializar extensiones
     db.init_app(app)
+    migrate = Migrate(app, db)
+    
     api = Api(app)
     
     # Registrar rutas
@@ -47,5 +54,17 @@ if __name__ == "__main__":
         db.create_all()
     
     # Ejecutar servidor
-    app.run(host='0.0.0.0', port=5000)
+app.run(host='0.0.0.0', port=5000)
+api = Api(app)
 
+
+api.add_resource(Video, "/video/<int:video_id>")
+
+if __name__ == '__main__':
+    with app.app_context():
+        db.create_all()
+        
+    
+    app.run(debug=True)
+
+  
